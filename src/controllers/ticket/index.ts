@@ -1,8 +1,7 @@
 // src/controllers/ticketConfigController.ts
 
 import { Request, Response } from 'express';
-import { TicketConfig } from '../../database/schemas/ticketConfig';
-import { getTicketConfigService } from '../../services/tickets';
+import { getTicketConfigService, updateTicketConfigService } from '../../services/tickets';
 
 
 export async function getTicketConfigController(req: Request, res: Response){
@@ -17,4 +16,19 @@ export async function getTicketConfigController(req: Request, res: Response){
    }
 }
 
+export async function updateTicketConfigController(req: Request, res: Response) {
+   const { id } = req.params;
+   const { categoryId } = req.body;
+
+   
+
+   try {
+      const updatedConfig = await updateTicketConfigService(id, categoryId);
+      res.status(200).json(updatedConfig);
+      
+   } catch (error) {
+       console.error('Erro ao atualizar a configuração de ticket', error);
+       res.status(500).json({ message: error });
+   }
+}
 

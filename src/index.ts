@@ -1,6 +1,5 @@
 import {config} from "dotenv"
 import { createApp } from "./utils/createApp"
-import rateLimit from "express-rate-limit";
 config()
 
 

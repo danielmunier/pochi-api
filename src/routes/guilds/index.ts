@@ -10,7 +10,7 @@ const router = Router()
 
     router.get('/:id/', isAuthenticated, getGuildController)
 
-    router.get('/:id/channels', isAuthenticated, getGuildChannelsController)
+    router.get('/:id/channels', getGuildChannelsController)
 
 
 

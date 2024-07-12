@@ -1,3 +1,4 @@
+//customStatus.ts
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface CustomStatusRole extends Document {
