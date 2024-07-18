@@ -34,4 +34,4 @@ const formEntryConfigSchema: Schema = new Schema({
     ]
 });
 
-mongoose.model<IFormEntryConfig>('FormEntryConfig', formEntryConfigSchema);
+export default mongoose.model('FormEntryConfig', formEntryConfigSchema)

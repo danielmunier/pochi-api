@@ -31,4 +31,4 @@ const guildConfigSchema: Schema = new Schema({
     }
 });
 
-mongoose.model<IGuildConfig>('GuildConfig', guildConfigSchema);
+export default mongoose.model('guildconfigs', guildConfigSchema)

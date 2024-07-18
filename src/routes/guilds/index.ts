@@ -1,6 +1,6 @@
 import { Router } from "express"
 import { isAuthenticated } from "../../utils/middlewares"
-import { getGuildChannelsController, getGuildController, getGuildPermissionsController, getGuildsController } from "../../controllers/guilds"
+import { getGuildChannelsController, getGuildConfigurationController, getGuildController, getGuildPermissionsController, getGuildRolesController, getGuildsController, updateGuildConfigurationController } from "../../controllers/guilds"
 const router = Router()
 
 
@@ -11,6 +11,12 @@ const router = Router()
     router.get('/:id/', isAuthenticated, getGuildController)
 
     router.get('/:id/channels', getGuildChannelsController)
+
+    router.get('/:id/config', getGuildConfigurationController)
+
+    router.post('/:id/config', updateGuildConfigurationController)
+
+    router.get('/:id/roles', getGuildRolesController)
 
 
 
