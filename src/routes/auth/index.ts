@@ -10,7 +10,7 @@ router.get("/discord", passport.authenticate('discord'), (req, res) => {
 
 router.get("/discord/redirect", passport.authenticate('discord'), (req, res) => {
     console.log(req)
-    const URL = 'http://localhost:3000'
+    const URL = "https://pochi-dashboard.vercel.app/"
     res.redirect(URL)
 })
 
