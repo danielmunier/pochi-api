@@ -34,7 +34,7 @@ export function createApp(): Express {
             mongoUrl: process.env.MONGO_URI
         })
     }));
-    app.use((req, res, next) => setTimeout(() => next(), 1000))
+    // app.use((req, res, next) => setTimeout(() => next(), 1000))
     
     app.use(passport.initialize());
     app.use(passport.session());

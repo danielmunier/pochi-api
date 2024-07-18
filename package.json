@@ -26,7 +26,7 @@
     "passport-discord": "^0.1.4"
   },
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "node ./dir/index.js",
     "dev": "nodemon ./src/index.ts",
     "build": "tsc"
   }
