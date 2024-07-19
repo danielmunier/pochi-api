@@ -32,6 +32,8 @@ export function createApp(): Express {
         saveUninitialized: false,
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 7,
+            secure: true,
+            httpOnly: true,
             sameSite: 'none', 
             domain: 'pochi-dashboard.vercel.app',
         },
