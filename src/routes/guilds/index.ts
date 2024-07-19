@@ -4,19 +4,19 @@ import { getGuildChannelsController, getGuildConfigurationController, getGuildCo
 const router = Router()
 
 
-    router.get("/", isAuthenticated , getGuildsController)
-    
-    router.get('/:id/permissions', isAuthenticated, getGuildPermissionsController)
+router.get("/", getGuildsController)
 
-    router.get('/:id/', isAuthenticated, getGuildController)
+router.get('/:id/permissions', getGuildPermissionsController)
 
-    router.get('/:id/channels', getGuildChannelsController)
+router.get('/:id/', getGuildController)
 
-    router.get('/:id/config', getGuildConfigurationController)
+router.get('/:id/channels', getGuildChannelsController)
 
-    router.post('/:id/config', updateGuildConfigurationController)
+router.get('/:id/config', getGuildConfigurationController)
 
-    router.get('/:id/roles', getGuildRolesController)
+router.post('/:id/config', updateGuildConfigurationController)
+
+router.get('/:id/roles', getGuildRolesController)
 
 
 
