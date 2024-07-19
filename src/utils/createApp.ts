@@ -17,7 +17,10 @@ export function createApp(): Express {
     //     origin: ["http://localhost:1500, http://localhost:3000"],
     //     credentials: true
     // }));
-    app.use(cors())
+    app.use(cors({
+        origin: "https://pochi-dashboard.vercel.app/menu",
+        credentials: true
+    }))
 
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
@@ -28,7 +31,9 @@ export function createApp(): Express {
         resave: false,
         saveUninitialized: false,
         cookie: {
-            maxAge: 1000 * 60 * 60 * 24 * 7
+            maxAge: 1000 * 60 * 60 * 24 * 7,
+            sameSite: 'none', 
+            domain: 'pochi-dashboard.vercel.app',
         },
         store: store.create({
             mongoUrl: process.env.MONGO_URI
