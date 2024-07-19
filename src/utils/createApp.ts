@@ -18,7 +18,7 @@ export function createApp(): Express {
     //     credentials: true
     // }));
     app.use(cors({
-        origin: "https://pochi-dashboard.vercel.app/menu",
+        origin: "https://pochi-dashboard.vercel.app",
         credentials: true
     }))
 
