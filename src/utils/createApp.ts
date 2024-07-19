@@ -14,7 +14,7 @@ export function createApp(): Express {
 
     // CORS
     app.use(cors({
-        origin: ["https://pochi-dashboard.vercel.app"],
+        origin: ["https://pochi-dashboard.onrender.com"],
         credentials: true
     }));
     //app.use(cors())
@@ -32,7 +32,7 @@ export function createApp(): Express {
             //secure: true,
             //httpOnly: true,
             sameSite: false, 
-            domain: '.pochi-dashboard.vercel.app',
+            domain: '.pochi-dashboard.onrender.com',
         },
         store: store.create({
             mongoUrl: process.env.MONGO_URI
