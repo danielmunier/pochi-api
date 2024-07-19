@@ -8,7 +8,7 @@ router.get("/discord", passport.authenticate('discord'), (req, res) => {
 
 
 router.get("/discord/redirect", passport.authenticate('discord'), (req, res) => {
-    const URL = process.env.APP_URL + "/menu" 
+    const URL = process.env.APP_URL
     
     res.redirect(URL as string)
 })
