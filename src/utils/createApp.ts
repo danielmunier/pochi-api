@@ -31,8 +31,8 @@ export function createApp(): Express {
             maxAge: 1000 * 60 * 60 * 24 * 7,
             //secure: true,
             //httpOnly: true,
-            //sameSite: 'none', 
-            //domain: 'localhost',
+            sameSite: false, 
+            domain: 'https://pochi-api.vercel.app',
         },
         store: store.create({
             mongoUrl: process.env.MONGO_URI
