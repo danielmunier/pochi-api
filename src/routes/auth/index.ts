@@ -1,5 +1,5 @@
 import { Router } from "express"
-import passport from 'passport'
+import passport, { session } from 'passport'
 const router = Router()
 
 router.get("/discord", passport.authenticate('discord'), (req, res) => {
