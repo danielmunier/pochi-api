@@ -32,7 +32,7 @@ export function createApp(): Express {
             //secure: true,
             //httpOnly: true,
             sameSite: false, 
-            domain: 'https://pochi-api.onrender.com/',
+            domain: 'pochi-api.onrender.com',
         },
         store: store.create({
             mongoUrl: process.env.MONGO_URI
