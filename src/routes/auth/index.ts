@@ -3,15 +3,13 @@ import passport from 'passport'
 const router = Router()
 
 router.get("/discord", passport.authenticate('discord'), (req, res) => {
-    console.log(req)
-    res.status(200)
+    res.sendStatus(200)
 })
 
 
 router.get("/discord/redirect", passport.authenticate('discord'), (req, res) => {
-    console.log(req)
-    const URL = "https://pochi-dashboard.vercel.app/"
-    res.redirect(URL)
+    const URL = 'https://pochi-dashboard.vercel.app/' || 'http://localhost:3000/'
+    res.redirect(URL as string)
 })
 
 
