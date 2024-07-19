@@ -8,7 +8,8 @@ router.get("/discord", passport.authenticate('discord'), (req, res) => {
 
 
 router.get("/discord/redirect", passport.authenticate('discord'), (req, res) => {
-    const URL = 'https://pochi-dashboard.vercel.app/' || 'http://localhost:3000/'
+    const URL = process.env.APP_URL + "/menu" 
+    
     res.redirect(URL as string)
 })
 
@@ -20,5 +21,7 @@ router.get("/status", (req, res) => {
         res.send({msg: 'Unauthorized'}).status(401)
     }
 })
+
+
 
 export default router;
